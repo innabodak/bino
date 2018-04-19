@@ -241,11 +241,13 @@ div.adv_inner > img {
 	transform: translate(-50%, -50%);
 }
 
+div.adv_inner > img:hover + div.adv_icon,
 div.adv_icon:hover {
 	border-color:  rgba(231, 76, 60, 1);
 	transform: rotate(45deg);
 }
 
+div.adv_inner > img:hover ~ h3,
 div.adv_icon:hover ~ h3 {
 	color:  rgba(231, 76, 60, 1);
 }
