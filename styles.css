@@ -8,16 +8,23 @@ body {
 	font-size: 0;
 	margin: 0;
 	min-width: 980px;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.m_width {
+	max-width: 1170px;
+	min-width: 980px;
+	margin: 0 auto;
 }
 
 section.main {
 	padding: 40px 120px 260px;
 	position: relative;
-	background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('./layer-5.jpg');
+	background-image: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('./img/layer-5.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 50% 50%;
-	/*overflow: hidden;*/
 }
 
 section.main::before,
@@ -40,12 +47,6 @@ section.main::after {
 	border-bottom: 120px solid #fff;
 	border-left: 960px solid transparent;
 	left: 50%;
-}
-
-.m_width {
-	max-width: 1170px;
-	min-width: 980px;
-	margin: 0 auto;
 }
 
 .logo {
@@ -205,53 +206,137 @@ h1 {
 	transform: translateY(-50%);
 }
 
-section.features {
-	padding: 65px 0px 112px;
+/* ______section.advantages____________*/
 
-	border-bottom: 2px solid;
+section.advantages {
+	padding: 124px 0px 100px; /*bot:  112-12*/
+	border-bottom: 2px solid rgba(230, 231, 235, 1);
 }
 
-div.features_inner {
+div.adv_inner {
 	width: 249px;
 	display: inline-block;
+	text-align: center;
+	margin-right: 56px;
+	position: relative;
+	vertical-align: top;
 }
 
-div.icon_wrapper {
+div.adv_inner:last-child {
+	margin-right: 0px;
+}
+
+div.adv_icon {
 	width: 73px;
 	height: 73px;
-	border: 1px solid rgba(153, 153, 153, 255);
-	position: relative;
+	border: 1px solid rgba(230, 231, 235, 1);
+	margin: 0 auto;
+	transition: color, transform .3s;
 }
 
-div.icon_wrapper > img {
-	display: inline-block;
+div.adv_inner > img {
 	position: absolute;
-	margin: auto auto;
+	left: 50%;
+	top: 35.5px; 
+	transform: translate(-50%, -50%);
 }
 
-h2 {
+div.adv_icon:hover {
+	border-color:  rgba(231, 76, 60, 1);
+	transform: rotate(45deg);
+}
+
+div.adv_icon:hover ~ h3 {
+	color:  rgba(231, 76, 60, 1);
+}
+
+.adv_inner > h3 {
 	font-family: ﻿OpenSans-Semibold, ﻿AdobeInvisFont, ﻿MyriadPro-Regular, sans-serif;
-	font-size: 18pt;
-	color: rgba(231, 76, 60, 255);
-	text-align: left;
+	font-size: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1.35px;
+	color: rgba(106, 106, 106, 1);
 	position: relative;
+	transition: color .3s;
+	margin: 30px 0 38px;
 }
 
-h2::after {
-	content: "";
+.adv_inner > h3:hover {
+	color: rgba(231, 76, 60, 1);
+}
+
+h3::after {
+	content: '';
+	display: block;
 	width: 41px;
 	height: 2px;
-	color: #e1e1e1;
-	display: block;
-	/*position: absolute;
+	background: rgba(106, 106, 106, 1);
+	position: absolute;
 	bottom: -19px;
-	left: calc(50%);
-	transition: translateX(-50%);*/
+	right: calc(50% - 20.5px);
 }
 
-.features_inner > h2 + p {
-	font-family: ﻿SourceSansPro-Light, ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
-	font-size: 12pt;
-	color: rgba(153, 153, 153, 255);
-	text-align: center;
+.adv_inner > h3 ~ p {
+	font-family: ﻿SourceSansPro, ﻿AdobeInvisFont, ﻿MyriadPro-Regular;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 20px;
+	letter-spacing: 0.9px;
+	color: rgba(153, 153, 153, 1);
+}
+
+/* ______section.advantages____________*/
+
+section.history {
+	padding: 141px 0 146px;
+}
+
+.history_left {
+	display: inline-block;
+	width: 43.25%;
+	margin-right: 77px;
+	vertical-align: top;
+}
+
+.history_right {
+	display: inline-block;
+	width: 50.17%; /*calc(100% - 77px - 506px);*/ 
+	vertical-align: top;
+}
+
+
+.history_right h2 {
+	font-family: SourceSansPro, sans-serif;
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3.6px;
+	color: rgba(106, 106, 106, 1);
+	margin: 0 0 54px 35px; 
+	position: relative;
+}
+
+.history_right h2::before {
+	content: "";
+	width: 6px;
+	height: 34px;
+	background: #e74c3c;
+	position: absolute;
+	left: -29px;
+}
+
+.history_right h2 ~ p {
+	font-family: SourceSansPro, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 29px;
+	color: rgba(153, 153, 153, 1);
+}
+
+button.history {
+	background: #e74c3c;
+	border: none;
+	letter-spacing: 0.12px;
+	margin: 33px 0 0;  /*(top 47-14px)*/
 }
